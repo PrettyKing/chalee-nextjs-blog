@@ -20,12 +20,6 @@ const nextConfig = {
     };
     return config;
   },
-  // 完全跳过静态优化，强制所有页面为动态
-  experimental: {
-    staticPageGenerationTimeout: 0,
-  },
-  // 输出配置
-  output: "standalone",
 };
 
 module.exports = nextConfig;
