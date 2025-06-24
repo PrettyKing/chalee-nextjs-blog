@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        # - npm ci
         # 生成 Prisma Client
         # - npx prisma generate
         - npx prisma generate --no-engine  # 跳过引擎下载
