@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        # 生成 Prisma Client
+        # - npx prisma generate
+        - npx prisma generate --no-engine  # 跳过引擎下载
+        # 可选：运行数据库迁移（谨慎使用）
+        # - npx prisma db push
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
