@@ -1,8 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
@@ -14,7 +11,7 @@ datasource db {
 model Post {
   id        Int      @id @default(autoincrement())
   title     String   @db.VarChar(255)
-  content   String   @db.Text
+  content   String
   summary   String?  @db.VarChar(500)
   slug      String   @unique @db.VarChar(255)
   published Boolean  @default(false)
